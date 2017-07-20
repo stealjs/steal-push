@@ -1,0 +1,12 @@
+{
+  "app@1.0.0#index": {
+    "dist/bundles/app/index.js": {
+      "weight": 2,
+      "type": "script"
+    },
+    "dist/bundles/app/index.css": {
+      "weight": 1,
+      "type": "style"
+    }
+  }
+}
