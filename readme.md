@@ -1,5 +1,8 @@
 # steal-push
 
+[![Build Status](https://travis-ci.org/stealjs/steal-push.svg?branch=master)](https://travis-ci.org/stealjs/steal-push)
+[![npm version](https://badge.fury.io/js/steal-push.svg)](http://badge.fury.io/js/steal-push)
+
 **steal-push** is server middleware for HTTP2 push. Using steal-tools you can create a **bundle manifest** that species which modules need to be loaded for each *bundle*. steal-push uses this manifest file to push files when a given route is used.
 
 ## Install
