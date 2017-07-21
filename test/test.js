@@ -1,8 +1,10 @@
 const assert = require("assert");
 const merge = require("merge-stream");
 const through = require("through2");
-const sp = require("../index.js");
+const sp = require("../lib/index.js");
 const Writable = require("stream").Writable;
+
+require("./get_bundle_test");
 
 describe("Basics", function(){
 	var stealPush = sp.create({
@@ -10,7 +12,7 @@ describe("Basics", function(){
 		cwd: __dirname + "/tests/basics"
 	});
 
-	var push = stealPush("app@1.0.0#index");
+	var push = stealPush("index");
 
 	it("works", function(){
 		var req = through(() => {});

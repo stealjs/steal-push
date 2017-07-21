@@ -2,7 +2,7 @@
   "name": "steal-push",
   "version": "1.0.0",
   "description": "HTTP2 PUSH Support through Steal's bundleManifest",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/test.js"
   },
