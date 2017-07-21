@@ -8,6 +8,16 @@
 npm install steal-push --save
 ```
 
+## Setup
+
+Before using steal-push you must generate a [bundle manifest](https://stealjs.com/docs/steal-tools.BuildOptions.html) from steal-tools like so:
+
+```js
+stealTools.build(config, {
+	bundleManifest: true
+});
+```
+
 ## Usage
 
 steal-push can be used in plain Node web servers, or in express apps.
