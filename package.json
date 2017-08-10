@@ -30,6 +30,7 @@
     "through2": "^2.0.3"
   },
   "dependencies": {
-    "lodash.memoize": "^4.1.2"
+    "lodash.memoize": "^4.1.2",
+    "steal-fuzzy-normalize": "^1.0.0"
   }
 }

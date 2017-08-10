@@ -4,8 +4,6 @@ const through = require("through2");
 const sp = require("../lib/index.js");
 const Writable = require("stream").Writable;
 
-require("./get_bundle_test");
-
 describe("Basics", function(){
 	var stealPush = sp.create({
 		manifest: __dirname + "/tests/basics/bundles.json",
