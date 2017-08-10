@@ -5,6 +5,8 @@
 
 **steal-push** is server middleware for HTTP2 push. Using steal-tools you can create a **bundle manifest** that species which modules need to be loaded for each *bundle*. steal-push uses this manifest file to push files when a given route is used.
 
+steal-push also works with HTTP1 servers, adding a [Link header](https://w3c.github.io/preload/#server-push-(http/2)) which tells the browser to begin fetching/parsing the assets.
+
 ## Install
 
 ```
