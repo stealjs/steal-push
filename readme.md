@@ -91,17 +91,29 @@ app.get("/order/details",
 server.listen(8080);
 ```
 
-### Specifying manifest file
+### StealPush constructor
 
-By default steal-push assumes your manifest file is located at `$(pwd)/dist/bundles.json`. If you have moved this manifest file to a different location you can create a new `stealPush` from that root:
+The `StealPush` constructor can be used to configure things such as the server root, and the location of the manifest file. Typical usage looks like:
 
 ```js
-var stealPush = require("steal-push").create({
-	manifest: __dirname + "/path/to/bundles.json"
+const StealPush = require("steal-push").StealPush;
+
+const stealPush = new StealPush({
+	manifest: "dist/bundles.json",
+	root: __dirname + "/assets",
+	serverRoot: "/app"
 });
 
-var push = stealPush("main"); // ...
+app.get("/",
+	stealPush.for("main"),
+	function(req, res){
+		...
+	});
 ```
+
+#### StealPush#for
+
+The `for()` method on the StealPush object is used to create a function that takes a request and response object.
 
 ## License
 

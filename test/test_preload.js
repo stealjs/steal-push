@@ -7,7 +7,7 @@ const Writable = require("stream").Writable;
 describe("Preload", function(){
 	var stealPush = sp.create({
 		manifest: __dirname + "/tests/basics/bundles.json",
-		cwd: __dirname + "/tests/basics"
+		root: __dirname + "/tests/basics"
 	});
 
 	var push = stealPush("index");

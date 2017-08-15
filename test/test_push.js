@@ -1,16 +1,16 @@
 const assert = require("assert");
 const merge = require("merge-stream");
 const through = require("through2");
-const sp = require("../lib/index.js");
+const StealPush = require("../lib/index.js").StealPush;
 const Writable = require("stream").Writable;
 
 describe("PUSH", function(){
-	var stealPush = sp.create({
+	var stealPush = new StealPush({
 		manifest: __dirname + "/tests/basics/bundles.json",
-		cwd: __dirname + "/tests/basics"
+		root: __dirname + "/tests/basics"
 	});
 
-	var push = stealPush("index");
+	var push = stealPush.for("index");
 
 	it("works", function(){
 		var req = through(() => {});
@@ -25,6 +25,8 @@ describe("PUSH", function(){
 			pushes.push(p);
 			return p;
 		};
+
+		debugger;
 
 		push(req, res);
 
