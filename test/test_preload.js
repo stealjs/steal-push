@@ -15,17 +15,19 @@ describe("Preload", function(){
 	it("works", function(){
 		var req = through(() => {});
 		req.headers = {
-			"accept-encoding": "gzip, deflate, br"	
+			"accept-encoding": "gzip, deflate, br"
 		};
 		var res = through(() => {});
 		res.push = undefined;
 
-		var pushes = [];
+		var headers = {}
 		res.setHeader = (name, val) => {
-			pushes.push(val);
+			headers[name.toLowerCase()] = val;
 		};
 
 		push(req, res);
+
+		var pushes = headers.link;
 		assert.equal(pushes.length, 2, "There are preloads for style and script");
 	});
 });
